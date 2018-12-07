@@ -4,6 +4,7 @@ import (
 	"algorithm/sort/mergesort"
 	"algorithm/sort/sorttesthelper"
 	"algorithm/sort/quicksort"
+	"algorithm/heap/maxheap"
 )
 
 func main() {
@@ -22,16 +23,20 @@ func main() {
 	//sorttesthelper.TestSort("SelectSort1",selectsort.SelectSort1,arr3)
 	//sorttesthelper.TestSort("InsertSort",insertsort.InsertSort,arr1)
 	//sorttesthelper.TestSort("ShellSort",shell_sort.ShellSort,arr5)
-	var arr7 = sorttesthelper.GenerateNearlyOrderedArray(100000,10)
+	var arr7 = sorttesthelper.GenerateNearlyOrderedArray(100000,10000)
 	var arr8 = sorttesthelper.CopyIntArray(arr7)
 	var arr9 = sorttesthelper.CopyIntArray(arr7)
 	//var arr10 = sorttesthelper.CopyIntArray(arr7)
 	var arr11 = sorttesthelper.CopyIntArray(arr7)
 	var arr12 = sorttesthelper.CopyIntArray(arr7)
+	var arr13 = sorttesthelper.CopyIntArray(arr7)
+	var arr14 = sorttesthelper.CopyIntArray(arr7)
 	//sorttesthelper.TestSort("InsertSort1",insertsort.InsertSort1,arr7)
 	sorttesthelper.TestSort("MergeSrot",mergesort.MergeSort,arr8)
 	sorttesthelper.TestSort("MergeSortBU",mergesort.MergeSortBU,arr9)
 	//sorttesthelper.TestSort("QuickSort",quicksort.QuickSort,arr10)
 	sorttesthelper.TestSort("QuickSort2",quicksort.QuickSort2,arr11)
 	sorttesthelper.TestSort("QuickSort3",quicksort.QuickSort3,arr12)
+	sorttesthelper.TestSort("HeapSort",maxheap.HeapSort,arr13)
+	sorttesthelper.TestSort("HeapSort2",maxheap.HeapSort2,arr14)
 }
