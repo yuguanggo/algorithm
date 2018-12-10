@@ -111,7 +111,7 @@ func HeapSort2(arr []int) {
 	for i := 0; i < m; i++ {
 		//取出首个最大值
 		v := arr[0]
-		temp = append(temp,v)
+		temp = append(temp, v)
 		//和最后一个交换下位置
 		arr[0], arr[n-1] = arr[n-1], arr[0]
 		arr = arr[:n-1] //删除最后一个元素
@@ -133,14 +133,30 @@ func HeapSort2(arr []int) {
 	arr = temp
 }
 
-func shiftDown(i int,n int,arr []int)  {
+func shiftDown(i int, n int, arr []int) {
+	for 2*i+1 < n {
+		j := 2*i + 1 //左子树
+		if j+1 < n && arr[j] < arr[j+1] {
+			j++
+		}
+		if arr[i] > arr[j] {
+			break
+		}
+		arr[i], arr[j] = arr[j], arr[i]
+		i = j
+	}
 
 }
 
-func HeapSort3(arr []int)  {
-	n:= len(arr)
-	//开始建堆
-	for i:=(n-2)/2;i>=0;i--{
-		shiftDown(i,n,arr)
+func HeapSort3(arr []int) {
+	n := len(arr)
+	//开始建堆序排，实现最大堆
+	for i := (n - 2) / 2; i >= 0; i-- {
+		shiftDown(i, n, arr)
+	}
+	//开始排序
+	for i := 0; i < n; i++ {
+		arr[0], arr[n-i-1] = arr[n-i-1], arr[0]
+		shiftDown(0, n-i-1, arr)
 	}
 }
