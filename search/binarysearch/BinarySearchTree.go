@@ -26,10 +26,14 @@ func (bts *BTS) Size() int {
 func (bts *BTS) IsEmpty() bool {
 	return bts.count == 0
 }
+func (bts *BTS) GetRoot() *node {
+	return bts.root
+}
 
 // 向二分搜索树中插入一个新的(key, value)数据对
 func (bts *BTS) Insert(key int, value int) {
 	bts.root = insert(bts.root, key, value)
+	bts.count += 1
 }
 
 //在二分搜索树中搜索键key所对应的值。如果这个值不存在, 则返回null
