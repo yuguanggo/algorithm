@@ -15,7 +15,7 @@ func lengthOfLongestSubstring(s string) int {
 	m := make(map[string]int)
 	i := 0
 	for j := 0; j < n; j++ {
-		if k, ok := m[string(s[i])]; ok {
+		if k, ok := m[string(s[j])]; ok {
 			if k > i {
 				i = k
 			}
@@ -23,7 +23,7 @@ func lengthOfLongestSubstring(s string) int {
 		if ans < j-i+1 {
 			ans = j - i + 1
 		}
-		m[string(s[i])] = j + 1
+		m[string(s[j])] = j + 1
 	}
 	return ans
 
