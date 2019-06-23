@@ -26,4 +26,5 @@ func main() {
 	var arr8 = sorttesthelper.CopyIntArray(arr7)
 	sorttesthelper.TestSort("InsertSort1",insertsort.InsertSort1,arr7)
 	sorttesthelper.TestSort("MergeSrot",mergesort.MergeSrot,arr8)
+	var a []int
 }
