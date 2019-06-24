@@ -6,6 +6,8 @@ import (
 )
 
 /**
+字符串的排列
+
 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
 
 换句话说，第一个字符串的排列之一是第二个字符串的子串。
@@ -34,16 +36,14 @@ func checkInclusion(s1 string, s2 string) bool {
 	if n1>n2 {
 		return false
 	}
-	ss1 := strings.Split(s1, "")
-	ss2 := strings.Split(s2, "")
 	m := make(map[string]int)
 	//存储s1每个字符的个数
-	sm1 := make(map[string]int)
+	sm1 := make(map[uint8]int)
 	for j := 0; j < n1; j++ {
-		if v, ok := sm1[ss1[j]]; ok {
-			sm1[ss1[j]] = v + 1
+		if v, ok := sm1[s1[j]-'a']; ok {
+			sm1[s1[j]-'a'] = v + 1
 		} else {
-			sm1[ss1[j]] = 1
+			sm1[s1[j]-'a'] = 1
 		}
 
 	}
@@ -74,6 +74,8 @@ func checkInclusion(s1 string, s2 string) bool {
 
 func main() {
 	s1 := "a"
-	s2 := "ab"
-	fmt.Println(checkInclusion(s1, s2))
+	//s2 := "ab"
+	fmt.Println((s1[0]-'a'))
+	//fmt.Println(checkInclusion(s1, s2))
 }
+
