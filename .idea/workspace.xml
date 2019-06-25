@@ -2,12 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="996a2364-6444-4326-afe3-9421e7aa8334" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/leetcode/array/moveZeroes/moveZeroes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/array/removeDuplicates/removeDuplicates.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/array/removeElement/removeElement.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/array/sortColors/sortColors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap/maxheap/indexmaxheap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap/maxheap/maxheap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/LFUCache/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/LRUCache/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/MinStack/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/addTwoNumbers/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/checkInclusion/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/detectCycle/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/findCircleNum/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/findKthLargest/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/findLengthOfLCIS/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/getIntersectionNode/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/getPermutation/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/lengthOfLongestSubstring/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/longestCommonPrefix/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/longestConsecutive/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/lowestCommonAncestor/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/maxAreaOfIsland/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/maxEnvelopes/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/maxProfit/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/maxProfit2/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/maxSubArray/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/maximalSquare/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/merge/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/mergeKLists/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/minimumTotal/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/multiply/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/restoreIpAddresses/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/reverseList/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/search/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/simplifyPath/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/sortList/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/threeSum/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/trap/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcodebytedance/zigzagLevelOrder/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/liubobo/215findKthLargest/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/liubobo/215findKthLargest/quicksort/quicksort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/liubobo/88merge/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/liubobo/pow/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/binarysearch/BinarySearch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/binarysearch/BinarySearchTree.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sort/quicksort/quick_sort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/binarysearch/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/generator/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/interface/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/memery/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/quicksort/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/reflect/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/sort/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/algorithm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/array/moveZeroes/moveZeroes.go" beforeDir="false" afterPath="$PROJECT_DIR$/liubobo/array/moveZeroes/moveZeroes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/array/removeDuplicates/removeDuplicates.go" beforeDir="false" afterPath="$PROJECT_DIR$/liubobo/array/removeDuplicates/removeDuplicates.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/array/removeElement/removeElement.go" beforeDir="false" afterPath="$PROJECT_DIR$/liubobo/array/removeElement/removeElement.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/array/sortColors/sortColors.go" beforeDir="false" afterPath="$PROJECT_DIR$/liubobo/array/sortColors/sortColors.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sort/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sort/mergesort/merge_sort.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort/mergesort/merge_sort.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,30 +77,32 @@
     <session id="-1960961575">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="3239" />
+          <entry key="go" value="4166" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="3239" />
+          <entry key="Go" value="4166" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="go" value="14" />
+          <entry key="go" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="14" />
+          <entry key="Go" value="17" />
         </counts>
       </usages-collector>
     </session>
@@ -50,46 +110,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sort/bubblesort/bubble_sort.go">
+        <entry file="file://$PROJECT_DIR$/liubobo/array/removeDuplicates/removeDuplicates.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="779">
+              <caret line="41" selection-start-line="41" selection-end-line="56" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/leetcode/array/moveZeroes/moveZeroes.go">
+        <entry file="file://$PROJECT_DIR$/liubobo/array/sortColors/sortColors.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/leetcode/array/removeElement/removeElement.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="45" selection-start-line="45" selection-end-line="55" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/leetcode/array/removeDuplicates/removeDuplicates.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="56" selection-end-column="1" />
+            <state relative-caret-position="456">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/leetcode/array/sortColors/sortColors.go">
+        <entry file="file://$PROJECT_DIR$/liubobo/215findKthLargest/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+            <state relative-caret-position="71">
+              <caret line="28" selection-start-line="28" selection-end-line="58" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/liubobo/215findKthLargest/quicksort/quicksort.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sort/quicksort/quick_sort.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="117" column="34" lean-forward="true" selection-start-line="117" selection-end-line="117" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -97,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sort/mergesort/merge_sort.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            <state relative-caret-position="528">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -180,6 +240,8 @@
         <option value="$PROJECT_DIR$/leetcode/array/removeElement/removeElement.go" />
         <option value="$PROJECT_DIR$/leetcode/array/removeDuplicates/removeDuplicates.go" />
         <option value="$PROJECT_DIR$/leetcode/array/sortColors/sortColors.go" />
+        <option value="$PROJECT_DIR$/liubobo/215findKthLargest/quicksort/quicksort.go" />
+        <option value="$PROJECT_DIR$/liubobo/215findKthLargest/main.go" />
       </list>
     </option>
   </component>
@@ -190,6 +252,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="693" />
+    <option name="y" value="207" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
   </component>
@@ -211,34 +275,36 @@
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="liubobo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="array" type="462c0819:PsiDirectoryNode" />
+              <item name="liubobo" type="462c0819:PsiDirectoryNode" />
+              <item name="215findKthLargest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="array" type="462c0819:PsiDirectoryNode" />
-              <item name="moveZeroes" type="462c0819:PsiDirectoryNode" />
+              <item name="sort" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="array" type="462c0819:PsiDirectoryNode" />
-              <item name="removeDuplicates" type="462c0819:PsiDirectoryNode" />
+              <item name="sort" type="462c0819:PsiDirectoryNode" />
+              <item name="quicksort" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="array" type="462c0819:PsiDirectoryNode" />
-              <item name="removeElement" type="462c0819:PsiDirectoryNode" />
+              <item name="sort" type="462c0819:PsiDirectoryNode" />
+              <item name="selectsort" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="sort" type="462c0819:PsiDirectoryNode" />
+              <item name="shell_sort" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -251,17 +317,18 @@
     <property name="DefaultGoTemplateProperty" value="Go Application" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yugua\go\src\algorithm\liubobo" />
       <recent name="C:\Users\yugua\go\src\algorithm\leetcode\array" />
       <recent name="C:\Users\yugua\go\src\algorithm\leetcode\moveZeroes" />
       <recent name="C:\Users\yugua\go\src\algorithm\sort\shell_sort" />
       <recent name="C:\Users\yuguang\go\src\algorithm\sort\insertsort" />
-      <recent name="C:\Users\yuguang\go\src\algorithm\sort" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -276,7 +343,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build sortColors.go">
+  <component name="RunManager" selected="Go Build.go build main.go (1)">
     <configuration name="go build insert_sort.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -285,6 +352,14 @@
       <filePath value="$PROJECT_DIR$/insertsort/insert_sort.go" />
       <package value="algorithm" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="C:\Users\yugua\go\src" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/liubobo/215findKthLargest/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -310,9 +385,11 @@
       <item itemvalue="Go Build.go build insert_sort.go" />
       <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Build.go build sortColors.go" />
+      <item itemvalue="Go Build.go build main.go (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build sortColors.go" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build insert_sort.go" />
@@ -323,13 +400,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.117803834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991323" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -353,10 +430,21 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/leetcode/array/sortColors/sortColors.go</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/liubobo/215findKthLargest/quicksort/quicksort.go</url>
+          <line>65</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/liubobo/215findKthLargest/main.go</url>
+          <line>57</line>
           <properties />
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/liubobo/215findKthLargest/main.go</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -389,9 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="17" column="58" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="61" />
-          <folding>
-            <element signature="e#177#221#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -402,10 +487,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sort/mergesort/merge_sort.go">
+    <entry file="file://$PROJECT_DIR$/leetcode.go" />
+    <entry file="file://$PROJECT_DIR$/sort/bubblesort/bubble_sort.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liubobo/array/moveZeroes/moveZeroes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liubobo/array/removeElement/removeElement.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" selection-start-line="45" selection-end-line="55" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liubobo/array/removeDuplicates/removeDuplicates.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="41" selection-start-line="41" selection-end-line="56" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liubobo/array/sortColors/sortColors.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -437,45 +551,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode.go">
+    <entry file="file://$PROJECT_DIR$/sort/mergesort/merge_sort.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        <state relative-caret-position="528">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sort/bubblesort/bubble_sort.go">
+    <entry file="file://$PROJECT_DIR$/sort/quicksort/quick_sort.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="117" column="34" lean-forward="true" selection-start-line="117" selection-end-line="117" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/array/moveZeroes/moveZeroes.go">
+    <entry file="file://$PROJECT_DIR$/liubobo/215findKthLargest/quicksort/quicksort.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        <state relative-caret-position="281">
+          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/array/removeElement/removeElement.go">
+    <entry file="file://$PROJECT_DIR$/liubobo/215findKthLargest/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="45" selection-start-line="45" selection-end-line="55" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/array/removeDuplicates/removeDuplicates.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="56" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/array/sortColors/sortColors.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        <state relative-caret-position="71">
+          <caret line="28" selection-start-line="28" selection-end-line="58" selection-end-column="1" />
         </state>
       </provider>
     </entry>
