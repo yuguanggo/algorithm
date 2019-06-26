@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"algorithm/liubobo/215findKthLargest/quicksort"
 )
 
 /**
@@ -60,5 +61,6 @@ func findKthLargest(nums []int, k int) int {
 
 func main() {
 	var arr =[]int{3,2,1,5,6,4}
-	fmt.Println(findKthLargest(arr,2))
+	quicksort.ReSort3(arr,0,len(arr)-1)
+	fmt.Println(arr)
 }
