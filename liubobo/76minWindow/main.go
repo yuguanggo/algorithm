@@ -74,11 +74,12 @@ func minWindow2(s string, t string) string {
 			if r-l+1<res{
 				minl=l
 				minr=r
+				res=minr-minl+1
 			}
 
 			if _,ok:=needs[s[l]];ok{
 				windows[s[l]]--
-				if windows[s[l]]<needs[s[r]]{
+				if windows[s[l]]<needs[s[l]]{
 					match--
 				}
 			}
@@ -87,6 +88,42 @@ func minWindow2(s string, t string) string {
 
 	}
 	if res==m+1{
+		return ""
+	}
+	return s[minl:minr+1]
+}
+
+func minWindow3(s string, t string) string {
+	//s[l..r]窗口
+	l,r:=0,0
+	needs:=[128]int{}
+	windows:=[128]int{}
+	m,n:=len(s),len(t)
+	min:=m+1
+	for i:=0;i<n;i++{
+		needs[t[i]]++
+	}
+	minl,minr:=0,0
+	match:=0
+	for r<m{
+		if windows[s[r]]<needs[s[r]]{
+			match++
+		}
+		windows[s[r]]++
+		for l<=r&&windows[s[l]]>needs[s[l]]{
+			windows[s[l]]--
+			l++
+		}
+		width:=r-l+1
+		if match==n&&min>width{
+			minl=l
+			minr=r
+			min = width
+		}
+		r++
+
+	}
+	if min==m+1{
 		return ""
 	}
 	return s[minl:minr+1]
@@ -102,7 +139,7 @@ func isEqual(a,b map[byte]int) bool  {
 }
 
 func main() {
-	s:="ADOBECODEBANC"
-	t:="ABC"
-	fmt.Println(minWindow2(s,t))
+	s:="aab"
+	t:="aab"
+	fmt.Println(minWindow3(s,t))
 }
