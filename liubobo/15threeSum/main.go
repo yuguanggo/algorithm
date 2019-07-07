@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 /**
 15. 三数之和
@@ -21,31 +24,41 @@ import "fmt"
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 func threeSum(nums []int) [][]int {
+	sort.Ints(nums)
 	n:=len(nums)
-	m:=make(map[int][][2]int)
-	for i:=0;i<n;i++{
-		for j:=i+1;j<n;j++{
-			
-			m[nums[i]+nums[j]]=[2]int{i,j}
-		}
-	}
 	res:=[][]int{}
-	visited:=make(map[int]bool)
 	for i:=0;i<n;i++{
-		complment:=0-nums[i]
-		if v,ok:=m[complment];ok{
-			if v[0]!=i&&v[1]!=i{
-				indexsum:=v[0]+v[1]+i
-				if _,ok:=visited[indexsum];!ok{
-					res=append(res,[]int{nums[i],nums[v[0]],nums[v[1]]})
-					visited[indexsum] = true
+		if nums[i]>0{
+			break
+		}
+		if i>0&&nums[i] == nums[i-1] {
+			continue
+		}
+		target:=0-nums[i]
+		l:=i+1
+		r:=n-1
+		for l<r{
+			if nums[l]+nums[r]==target{
+				res = append(res,[]int{nums[i],nums[l],nums[r]})
+				for l<r&&nums[l]==nums[l+1]{
+					l++
 				}
-
+				for l<r&&nums[r]==nums[r-1]{
+					r--
+				}
+				l++
+				r--
+			}else if nums[l]+nums[r]<target{
+				l++
+			}else{
+				r--
 			}
 		}
 	}
 	return res
 }
+
+
 func main() {
 	arr:=[]int{-1,0,1,2,-1,-4}
 
