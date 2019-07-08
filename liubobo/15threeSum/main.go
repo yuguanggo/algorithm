@@ -25,7 +25,7 @@ func threeSum(nums []int) [][]int {
 	m:=make(map[int][][2]int)
 	for i:=0;i<n;i++{
 		for j:=i+1;j<n;j++{
-			
+
 			m[nums[i]+nums[j]]=[2]int{i,j}
 		}
 	}
