@@ -37,5 +37,21 @@ func swapPairs(head *ListNode) *ListNode {
 }
 
 func main() {
-	
+	l4:=&ListNode{
+		Val:4,
+		Next:nil,
+	}
+	l3:=&ListNode{
+		Val:3,
+		Next:l4,
+	}
+	l2:=&ListNode{
+		Val:2,
+		Next:l3,
+	}
+	l1:=&ListNode{
+		Val:1,
+		Next:l2,
+	}
+	swapPairs(l1)
 }
