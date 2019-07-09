@@ -43,23 +43,20 @@ func reverseBetween(head *ListNode, m int, n int) *ListNode {
 	for i<=n{
 		next:=cur.Next
 		if i==m{
-			//将m的前一个节点和m位置的值保存下来
-			mpre =pre
+			//将m位置的值保存下来
+			mpre = pre
 			ml=cur
 		}
 		if i==n{
 			//遍历到n了,将n的下一个节点保存下来
 			nnext=cur.Next
-			if nnext!=nil{
-				cur.Next=pre
-				if mpre!=nil{
-					mpre.Next=cur
-				}
-				ml.Next=nnext
+			cur.Next=pre
+			if m==1{
+				head=cur
 			}else{
-				ml.Next=nnext
+				mpre.Next=cur
 			}
-
+			ml.Next=nnext
 			break
 		}
 		if i>m{
