@@ -1,5 +1,8 @@
 package main
 
+import (
+	"fmt"
+)
 
 /**
 24. 两两交换链表中的节点
@@ -23,15 +26,43 @@ type ListNode struct {
 }
 
 func swapPairs(head *ListNode) *ListNode {
+	pre:=new(ListNode)
+	pre.Next=head
+	cur:=pre
+	for cur.Next!=nil&&cur.Next.Next!=nil{
+		start:=cur.Next
+		end:=cur.Next.Next
+		cur.Next=end
+		start.Next=end.Next
+		end.Next=start
+		cur=start
+	}
+	return pre.Next
+}
+
+func swapPairs2(head *ListNode) *ListNode  {
+	if head==nil||head.Next==nil{
+		return head
+	}
+	next:=head.Next
+	head.Next=swapPairs(next.Next)
+	next.Next=head
+	return next
+}
+
+func swapPairs3(head *ListNode) *ListNode {
 	dummy:=new(ListNode)
-	cur:=head
+	dummy.Next=head
 	pre:=dummy
+	cur:=head
 	for cur!=nil&&cur.Next!=nil{
-		next:=cur.Next.Next
-		pre.Next=cur.Next
-		pre = cur
-		cur.Next=cur
-		cur=next
+		first:=cur
+		second:=cur.Next
+		pre.Next=second
+		first.Next=second.Next
+		second.Next=first
+		pre=first
+		cur=first.Next
 	}
 	return dummy.Next
 }
@@ -53,5 +84,9 @@ func main() {
 		Val:1,
 		Next:l2,
 	}
-	swapPairs(l1)
+	l1=swapPairs(l1)
+	fmt.Println(l1)
+	fmt.Println(l1.Next)
+	fmt.Println(l1.Next.Next)
+	fmt.Println(l1.Next.Next.Next)
 }
