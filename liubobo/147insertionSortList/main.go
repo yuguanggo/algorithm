@@ -43,8 +43,13 @@ func insertionSortList(head *ListNode) *ListNode {
 	dummy.Next=head
 	pre:=head
 	cur:=head.Next
-	for cur!=nil{
+	for cur!=nil&&cur.Next!=nil{
 		next:=cur.Next
+		if cur.Val<cur.Next.Val{
+			pre=cur
+			cur=next
+			continue
+		}
 		pre.Next=nil
 		//将当前元素插入合适的位置
 		incur:=dummy.Next
@@ -59,6 +64,10 @@ func insertionSortList(head *ListNode) *ListNode {
 			}
 			inpre=incur
 			incur=innext
+		}
+		if !b{
+			inpre.Next=cur
+			inpre=inpre.Next
 		}
 		pre=inpre
 		cur=next
