@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 147. 对链表进行插入排序
 对链表进行插入排序。
@@ -36,43 +38,75 @@ type ListNode struct {
 }
 
 func insertionSortList(head *ListNode) *ListNode {
-	if head==nil||head.Next==nil{
-		return head
-	}
 	dummy:=new(ListNode)
 	dummy.Next=head
-	pre:=head
-	cur:=head.Next
-	for cur!=nil&&cur.Next!=nil{
-		next:=cur.Next
-		if cur.Val<cur.Next.Val{
-			pre=cur
-			cur=next
-			continue
-		}
-		pre.Next=nil
-		//将当前元素插入合适的位置
-		incur:=dummy.Next
-		inpre:=dummy
-		b:=false
-		for incur!=nil{
-			innext:=incur.Next
-			if incur.Val>cur.Val&&!b{
-				inpre.Next=cur
-				inpre.Next.Next=incur
-				b=true
+	cur:=dummy
+	flag:=true
+	for cur.Next!=nil{
+		pre:=dummy
+		if cur.Next.Val>=cur.Val{
+			cur=cur.Next
+		}else{
+			flag=true
+			for pre.Next!=cur.Next{
+				if pre.Next.Val>cur.Next.Val{
+					delNode:=cur.Next
+					cur.Next=delNode.Next
+
+					delNode.Next=pre.Next
+					pre.Next=delNode
+					flag=false
+					break
+				}
+				pre=pre.Next
 			}
-			inpre=incur
-			incur=innext
+			if flag{
+				cur=cur.Next
+			}
 		}
-		if !b{
-			inpre.Next=cur
-			inpre=inpre.Next
-		}
-		pre=inpre
-		cur=next
 	}
 	return dummy.Next
+}
+func insertionSortList2(head *ListNode) *ListNode {
+
+	dummyHead := &ListNode{Val:0}
+	dummyHead.Next = head
+
+	flag := true
+
+
+	cur := dummyHead
+
+	for cur.Next != nil {
+
+		pre := dummyHead
+
+		if cur.Next.Val >= cur.Val {
+			cur = cur.Next
+		}else {
+			flag = true
+			for pre.Next != cur.Next {
+				if pre.Next.Val > cur.Next.Val {
+
+					delNode := cur.Next
+					cur.Next = delNode.Next
+
+					delNode.Next = pre.Next
+					pre.Next = delNode
+
+					flag = false
+					break
+				}
+				pre = pre.Next
+			}
+
+			if flag {
+				cur = cur.Next
+			}
+		}
+	}
+
+	return dummyHead.Next
 }
 
 func main() {
@@ -97,5 +131,5 @@ func main() {
 		Val:-1,
 		Next:l2,
 	}
-	insertionSortList(l1)
+	fmt.Println(insertionSortList2(l1))
 }
