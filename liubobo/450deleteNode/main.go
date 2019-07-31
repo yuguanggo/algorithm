@@ -1,6 +1,5 @@
 package main
 
-
 /**
 给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。
 
@@ -50,7 +49,53 @@ type TreeNode struct {
 }
 
 func deleteNode(root *TreeNode, key int) *TreeNode {
+	if root==nil{
+		return nil
+	}
+	if root.Val>key{
+		root.Left=deleteNode(root.Left,key)
+		return root
+	}else if root.Val<key{
+		root.Right=deleteNode(root.Right,key)
+		return root
+	}else{
+		//没有左子树
+		if root.Left==nil{
+			right:=root.Right
+			root=nil
+			return right
+		}
+		//没有右子树
+		if root.Right==nil{
+			left:=root.Left
+			root=nil
+			return left
+		}
+		//左右子树都在的情况下，当前节点用右子树的最小值替代
+		successor:=minmum(root.Right)
+		successor.Right=removeMin(root.Right)
+		successor.Left=root.Left
+		root=nil
+		return successor
+	}
+}
+//删除已node为根节点的最小值并返回根节点
+func removeMin(node *TreeNode) *TreeNode  {
+	if node.Left==nil{
+		right:=node.Right
+		node=nil
+		return right
+	}
+	node.Left=removeMin(node.Left)
+	return node
+}
 
+//找出以node为根节点的最小值
+func minmum(node *TreeNode) *TreeNode {
+	if node.Left==nil{
+		return node
+	}
+	return minmum(node.Left)
 }
 
 func main() {
