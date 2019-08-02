@@ -1,5 +1,6 @@
 package main
 
+import "fmt"
 
 /**
 77. 组合
@@ -24,9 +25,27 @@ package main
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 func combine(n int, k int) [][]int {
+	var res =make([][]int,0)
+	helper(n,k,1,[]int{},&res)
+	return res
+}
 
+func helper(n int,k int,index int,path []int,res *[][]int)  {
+	if len(path)==k{
+		var p=make([]int,len(path))
+		copy(p,path)
+		*res=append(*res,p)
+		return
+	}
+	for i:=index;i<=n-(k-len(path))+1;i++{
+		fmt.Println("i:",i)
+		path=append(path,i)
+		helper(n,k,i+1,path,res)
+		path=path[0:len(path)-1]
+	}
+	return
 }
 
 func main() {
-	
+	fmt.Println(combine(4,2))
 }
