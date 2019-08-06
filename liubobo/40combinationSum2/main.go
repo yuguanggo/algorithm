@@ -1,5 +1,6 @@
 package main
 
+import "sort"
 
 /**
 40. 组合总和 II
@@ -36,12 +37,29 @@ candidates 中的每个数字在每个组合中只能使用一次。
  */
 
 func combinationSum2(candidates []int, target int) [][]int {
-
+	var res=make([][]int,0)
+	sort.Ints(candidates)
+	helper(candidates,target,0,[]int{},&res)
+	return res
 }
 
-func helper(candidates []int, target int,path []int,res *[][]int)  {
+func helper(candidates []int, target int,index int,path []int,res *[][]int)  {
 	if target==0{
-
+		var p=make([]int,len(path))
+		copy(p,path)
+		*res=append(*res,p)
+		return
+	}
+	for i:=index;i<len(candidates);i++{
+		if candidates[i]>target{
+			break
+		}
+		if i>index&&candidates[i-1]==candidates[i]{
+			continue
+		}
+		path=append(path,candidates[i])
+		helper(candidates,target-candidates[i],i+1,path,res,)
+		path=path[0:len(path)-1]
 	}
 }
 
