@@ -57,15 +57,16 @@ func pacificAtlantic(matrix [][]int) [][]int {
 	}
 	//从边缘开始遍历
 	for i:=0;i<n;i++{
-		
+		dfs(matrix,0,i,d,visitedP)
+		dfs(matrix,m-1,i,d,visitedX)
+	}
+	for i:=0;i<m;i++{
+		dfs(matrix,i,0,d,visitedP)
+		dfs(matrix,i,n-1,d,visitedX)
 	}
 	for x:=0;x<m;x++{
 		for y:=0;y<n;y++{
-
-			istoP:=false
-			istoX:=false
-			dfs(matrix,x,y,d,&istoP,&istoX,visited)
-			if istoP&&istoX{
+			if visitedP[x][y]&&visitedX[x][y]{
 				res=append(res,[]int{x,y})
 			}
 		}
@@ -73,20 +74,14 @@ func pacificAtlantic(matrix [][]int) [][]int {
 	return res
 }
 
-func dfs(matrix [][]int,startx,starty int,d [4][2]int,istoP *bool,istoX *bool,visited [][]bool) {
+func dfs(matrix [][]int,startx,starty int,d [4][2]int,visited [][]bool) {
 	visited[startx][starty]=true
-	if startx==0||starty==0{
-		*istoP=true
-	}
-	if starty==len(matrix[0])-1||startx==len(matrix)-1{
-		*istoX=true
-	}
 	//开始遍历四个方向
 	for i:=0;i<4;i++{
 		newx:=startx+d[i][0]
 		newy:=starty+d[i][1]
-		if inarea(newx,newy,len(matrix),len(matrix[0]))&&!visited[newx][newy]&&matrix[startx][starty]>=matrix[newx][newy]{
-			dfs(matrix,newx,newy,d,istoP,istoX,visited)
+		if inarea(newx,newy,len(matrix),len(matrix[0]))&&!visited[newx][newy]&&matrix[startx][starty]<=matrix[newx][newy]{
+			dfs(matrix,newx,newy,d,visited)
 		}
 	}
 }

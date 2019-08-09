@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /**
 279. 完全平方数
@@ -22,6 +24,7 @@ import "fmt"
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 func numSquares(n int) int {
+	//转换为图
 	queue:=make([][2]int,0)
 	queue=append(queue,[2]int{n,0})
 	visited:=make([]bool,n+1)
@@ -48,6 +51,25 @@ func numSquares(n int) int {
 	return 0
 }
 
+func numSquares2(n int) int {
+	//动态规划
+	dp:=make([]int,n+1)
+	for i:=1;i<=n;i++{
+		dp[i]=i
+		for j:=1;i-j*j>=0;j++{
+			dp[i]=min(dp[i],dp[i-j*j]+1)
+		}
+	}
+	return dp[n]
+}
+
+func min(i,j int) int  {
+	if i>j{
+		return j
+	}
+	return i
+}
+
 func main() {
-	fmt.Println(numSquares(12))
+	fmt.Println(numSquares2(12))
 }
