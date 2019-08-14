@@ -28,10 +28,44 @@ package main
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/ones-and-zeroes
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+dp[m][n]=max(dp[m][n],dp[m-strs[i]m][n-strs[i]n]+1)
+*/
+
+
 
 func findMaxForm(strs []string, m int, n int) int {
+	if len(strs)==0{
+		return 0
+	}
+	dp:=make([][]int,m+1)
+	for i:=0;i<m+1;i++{
+		dp[i]=make([]int,n+1)
+	}
+	for i:=0;i<len(strs);i++{
+		ones:=0
+		zeros:=0
+		for j:=0;j<len(strs[i]);j++{
+			if strs[i][j]=='1'{
+				ones++
+			}else{
+				zeros++
+			}
+		}
 
+		for l:=m;l>=zeros;l--{
+			for k:=n;k>=ones;k--{
+				dp[l][k]=max(dp[l][k],dp[l-zeros][k-ones]+1)
+			}
+		}
+	}
+	return dp[m][n]
+}
+
+func max(i,j int) int  {
+	if i>j{
+		return i
+	}
+	return j
 }
 
 func main() {
