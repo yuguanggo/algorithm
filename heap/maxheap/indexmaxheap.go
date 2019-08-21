@@ -29,7 +29,7 @@ func (h *IndexMaxHeap) Insert(index int,v int)  {
 }
 
 func (h *IndexMaxHeap) shiftUp(index int)  {
-
+	
 }
 
 
