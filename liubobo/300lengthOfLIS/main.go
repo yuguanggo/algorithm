@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 300. 最长上升子序列
 给定一个无序的整数数组，找到其中最长上升子序列的长度。
@@ -21,6 +23,7 @@ package main
 dp[i]=max(dp[i],1+dp[j] if nums[i]>nums[j])
  */
 
+ //动态规划
 func lengthOfLIS(nums []int) int {
 	n:=len(nums)
 	if n==0{
@@ -44,6 +47,33 @@ func lengthOfLIS(nums []int) int {
 	return res
 }
 
+func lengthOfLIS2(nums []int) int{
+	n:=len(nums)
+	if n<2{
+		return n
+	}
+	tail:=make([]int,0)
+	tail=append(tail,nums[0])
+	for i:=1;i<n;i++{
+		if nums[i]>tail[len(tail)-1]{
+			tail=append(tail,nums[i])
+			continue
+		}
+		left:=0
+		right:=len(tail)-1
+		for left<right{
+			mid:=left+(right-left)/2
+			if tail[mid]<nums[i]{
+				left=mid+1
+			}else{
+				right=mid
+			}
+		}
+		tail[left]=nums[i]
+	}
+	return len(tail)
+}
+
 func max(i,j int)int  {
 	if i>j{
 		return i
@@ -53,5 +83,6 @@ func max(i,j int)int  {
 
 
 func main() {
-	
+	nums:=[]int{3,5,6,2,5,4,5,19,5,6,7,12}
+	fmt.Println(lengthOfLIS2(nums))
 }
