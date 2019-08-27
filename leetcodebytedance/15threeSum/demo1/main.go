@@ -7,40 +7,41 @@ import (
 
 func threeSum(nums []int) [][]int {
 	res:=make([][]int,0)
-	path:=make([]int,0)
-	if len(nums)==0{
-		return res
-	}
 	sort.Ints(nums)
-	visited:=make(map[int]bool)
-	dfs(nums,0,0,0,path,visited,&res)
+	n:=len(nums)
+	for k:=0;k<n;k++{
+		if nums[k]>0{
+			break
+		}
+		if k>0&&nums[k]==nums[k-1]{
+			continue
+		}
+		//双指针
+		target:=0-nums[k]
+		l:=k+1
+		r:=n-1
+		for l<r{
+			if nums[l]+nums[r]==target{
+				res=append(res,[]int{nums[k],nums[l],nums[r]})
+				for l<r&&nums[l]==nums[l+1]{
+					l++
+				}
+				for l<r&&nums[r]==nums[r-1]{
+					r--
+				}
+				l++
+				r--
+			}else if nums[l]+nums[r]<target{
+				l++
+			}else{
+				r--
+			}
+		}
+	}
 	return res
 }
 
-func dfs(nums []int,index int,pos int,sum int,path []int,visited map[int]bool,res *[][]int)  {
-	if index>=3{
-		if sum==0{
-			p:=make([]int,len(path))
-			copy(p,path)
-			*res=append(*res,p)
-		}
-		return
-	}
-	for i:=pos;i<len(nums);i++{
-		if len(path)==0{
-			if !visited[nums[i]]{
-				visited[nums[i]]=true
-			}else{
-				continue
-			}
-		}
-		sum=sum+nums[i]
-		path=append(path,nums[i])
-		dfs(nums,index+1,i+1,sum,path,visited,res)
-		path=path[0:len(path)-1]
-		sum=sum-nums[i]
-	}
-}
+
 
 
 func main() {
