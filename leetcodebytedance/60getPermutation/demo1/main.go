@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 /**
                 1,2,3,4     9
@@ -9,19 +12,33 @@ import "fmt"
 
  */
 func getPermutation(n int, k int) string {
-	return ""
+	used:=make(map[int]bool)
+	return helper(n,k,0,[]int{},used)
 }
 
-func helper(n int,k int,level int,path []int)  {
+func helper(n int,k int,level int,path []int,used map[int]bool) string  {
+	if level==n{
+		res:=""
+		for j:=0;j<len(path);j++{
+			res+=strconv.Itoa(path[j])
+		}
+		return res
+	}
+	ps:=f(n-1-level)
 	for i:=1;i<=n;i++{
-		if i*f(n-level)<k{
+		if used[i]{
+			continue
+		}
+		if ps<k{
+			k-=ps
 			continue
 		}
 		path=append(path,i)
-		k=k-(i-1)*f(n-level)
-		helper(n,k,level+1,path)
+		used[i]=true
+		return helper(n,k,level+1,path,used)
 
 	}
+	return ""
 }
 
 func f(n int) int  {
@@ -30,13 +47,11 @@ func f(n int) int  {
 		res*=i
 	}
 	return res
-
 }
 
 
 func main() {
 
-	fmt.Println(f(3))
-	fmt.Println(f(4))
+	fmt.Println(getPermutation(3,3))
 
 }
