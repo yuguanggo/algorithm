@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 103. 二叉树的锯齿形层次遍历
 给定一个二叉树，返回其节点值的锯齿形层次遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
@@ -64,5 +66,30 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 }
 
 func main() {
-	
+	t7:=&TreeNode{
+		Val:7,
+		Left:nil,
+		Right:nil,
+	}
+	t15:=&TreeNode{
+		Val:15,
+		Left:nil,
+		Right:nil,
+	}
+	t20:=&TreeNode{
+		Val:20,
+		Left:t15,
+		Right:t7,
+	}
+	t9:=&TreeNode{
+		Val:9,
+		Left:nil,
+		Right:nil,
+	}
+	t3:=&TreeNode{
+		Val:3,
+		Left:t9,
+		Right:t20,
+	}
+	fmt.Println(zigzagLevelOrder(t3))
 }
