@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /**
 LRU缓存机制
 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
@@ -135,15 +133,5 @@ func main() {
 	//cache.Put(4, 1)
 	//fmt.Println(cache.Get(1))
 	//fmt.Println(cache.Get(2))
-	const (
-		A=1<<10*iota
-		B
-		C
-		D
-	)
-	fmt.Println(A,B,C,D)
-	s:=[][]int{
-		{1,2},
-	    {1,2},
-	}
+
 }

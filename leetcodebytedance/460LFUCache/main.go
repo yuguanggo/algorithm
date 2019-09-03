@@ -28,7 +28,7 @@ func Constructor(capacity int) LFUCache {
 		len:     0,
 		cap:     capacity,
 		minFreq: 1,
-		mapKvs:  make(map[int]lfuVc, capacity),
+		mapKvs:  make(map[int]lfuVc),
 		mapFreq: make(map[int][]int),
 		mapIter: make(map[int]int),
 	}
