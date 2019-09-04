@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 全 O(1) 的数据结构
 实现一个数据结构支持以下操作：
@@ -68,14 +70,32 @@ func (this *AllOne) Inc(key string)  {
 	//判断是否存在
 	if node,ok:=this.mpKvs[key];ok{
 		//从对应的桶中删除node
+		preBucket:=this.mpBuckets[node.count]
 		this.removeNode(node)
+		//判断链表是否为空，为空的话删除所在桶
+
+		if this.mpBuckets[node.count].list.tail.pre==this.mpBuckets[node.count].list.head{
+			//为空的话更新桶的前节点
+			preBucket=this.mpBuckets[node.count].pre
+			//删除当前桶
+			this.removeBucket(this.mpBuckets[node.count])
+
+			delete(this.mpBuckets,node.count)
+
+		}
 		//创建新的桶
 		node.count=node.count+1
-		this.createBucket(node.count)
+		this.mpKvs[key]=node
+		//判断桶是否存在
+		if _,ok:=this.mpBuckets[node.count];!ok{
+			this.createBucket(node.count)
+			//将桶插入链表里
+			this.addNewBucketAfter(preBucket,this.mpBuckets[node.count])
+		}
+
 		//将node插入新桶里
 		this.addNode(node.count,node)
-		//将桶插入链表里
-		this.addNewBucketAfter(this.mpBuckets[node.count-1],this.mpBuckets[node.count])
+
 
 	}else{
 		//不存在
@@ -87,11 +107,17 @@ func (this *AllOne) Inc(key string)  {
 			next:nil,
 		}
 		//创建对应的桶
-		this.createBucket(1)
+		//判断桶是否存在
+		if _,ok:=this.mpBuckets[1];!ok{
+			this.createBucket(1)
+			//将桶插入桶的链表里
+			this.addNewBucketAfter(this.head,this.mpBuckets[1])
+		}
+
 		//将node 插入桶的list链表里
 		this.addNode(1,node)
-		//将桶插入桶的链表里
-		this.addNewBucketAfter(this.head,this.mpBuckets[1])
+		this.mpKvs[key]=node
+
 
 	}
 }
@@ -107,7 +133,17 @@ func (this *AllOne) Dec(key string)  {
 	//判断是否存在
 	if node,ok:=this.mpKvs[key];ok{
 		//从对应的桶中删除node
+		preBucket:=this.mpBuckets[node.count]
 		this.removeNode(node)
+		//判断链表是否为空，为空的话删除所在桶
+
+		if this.mpBuckets[node.count].list.tail.pre==this.mpBuckets[node.count].list.head{
+			preBucket=this.mpBuckets[node.count].pre
+			//删除当前桶
+			this.removeBucket(this.mpBuckets[node.count])
+
+			delete(this.mpBuckets,node.count)
+		}
 		if node.count==1{
 			//删除node
 			delete(this.mpKvs,node.key)
@@ -115,11 +151,16 @@ func (this *AllOne) Dec(key string)  {
 		}
 		//创建新的桶
 		node.count=node.count-1
-		this.createBucket(node.count)
+		this.mpKvs[key]=node
+		if _,ok:=this.mpBuckets[node.count];!ok{
+			this.createBucket(node.count)
+			//将桶插入链表里
+			this.addNewBucketAfter(preBucket,this.mpBuckets[node.count])
+		}
+
 		//将node插入新桶里
 		this.addNode(node.count,node)
-		//将桶插入链表里
-		this.addNewBucketBefore(this.mpBuckets[node.count],this.mpBuckets[node.count+1])
+
 
 	}
 	return
@@ -144,8 +185,7 @@ func (this *AllOne) GetMinKey() string {
 }
 
 func (this *AllOne)createBucket(count int)  {
-	//判断桶是否存在
-	if _,ok:=this.mpBuckets[count];!ok{
+
 		//创建桶
 		dHead:=&dLinkedNode{}
 		dTail:=&dLinkedNode{}
@@ -155,10 +195,6 @@ func (this *AllOne)createBucket(count int)  {
 			head:dHead,
 			tail:dTail,
 		}
-		bHead:=&bucket{}
-		bTail:=&bucket{}
-		bHead.next=bTail
-		bTail.pre=bHead
 		b:=&bucket{
 			count:count,
 			list:linkedList,
@@ -166,7 +202,7 @@ func (this *AllOne)createBucket(count int)  {
 			next:nil,
 		}
 		this.mpBuckets[count]=b
-	}
+
 }
 
 //在bucket链表某个节点的后面增加 bucket
@@ -177,12 +213,12 @@ func (this *AllOne)addNewBucketAfter(pre *bucket,b *bucket)  {
 	pre.next=b
 }
 
-//在bucket链表某个节点的前面增加 bucket
-func (this *AllOne)addNewBucketBefore(next *bucket,b *bucket)  {
-	b.next=next
-	b.pre=next.pre
-	next.pre=b
-	next.pre.next=b
+
+
+//删除bucket节点
+func (this *AllOne)removeBucket(b *bucket)  {
+	b.pre.next=b.next
+	b.next.pre=b.pre
 }
 
 //在对应的桶的链表里插入node
@@ -209,5 +245,19 @@ func (this *AllOne)removeNode(node *dLinkedNode)  {
  * param_4 := obj.GetMinKey();
  */
 func main() {
-	
+	allone:=Constructor()
+	allone.Inc("hello")
+	allone.Inc("goodbye")
+	allone.Inc("hello")
+	fmt.Println(allone.GetMaxKey())
+	allone.Inc("leet")
+	allone.Inc("code")
+	allone.Inc("leet")
+	allone.Dec("hello")
+	allone.Inc("leet")
+	allone.Inc("code")
+	allone.Inc("code")
+
+	fmt.Println(allone.GetMaxKey())
+
 }
