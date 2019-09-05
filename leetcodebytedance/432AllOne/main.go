@@ -80,7 +80,7 @@ func (this *AllOne) Inc(key string)  {
 			//删除当前桶
 			this.removeBucket(this.mpBuckets[node.count])
 
-			delete(this.mpBuckets,node.count)
+			//delete(this.mpBuckets,node.count)
 
 		}
 		//创建新的桶
