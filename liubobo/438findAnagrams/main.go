@@ -62,6 +62,15 @@ func findAnagrams(s string, p string) []int {
 	return res
 }
 
+func isEqual(a, b map[byte]int) bool {
+	for k, v := range b {
+		if a[k] != v {
+			return false
+		}
+	}
+	return true
+}
+
 func findAnagrams3(s string, p string) []int {
 	hashP := make(map[byte]int)
 	hashS := make(map[byte]int)
@@ -81,14 +90,7 @@ func findAnagrams3(s string, p string) []int {
 	}
 	return res
 }
-func isEqual(a, b map[byte]int) bool {
-	for k, v := range b {
-		if a[k] != v {
-			return false
-		}
-	}
-	return true
-}
+
 
 func findAnagrams2(s string, p string) []int {
 	//s[l..r]为滑动窗口
