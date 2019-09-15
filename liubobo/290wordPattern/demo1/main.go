@@ -9,14 +9,22 @@ func wordPattern(pattern string, str string) bool {
 	if m!=n{
 		return false
 	}
-	pi:=0
-	si:=0
 	record:=make(map[byte]string)
-	for pi<m&&si<n{
-		if _,ok:=record[pattern[pi]];!ok{
-
+	visited:=make(map[string]bool)
+	for i:=0;i<m;i++{
+		if _,ok:=record[pattern[i]];ok{
+			if record[pattern[i]]!=words[i]{
+				return false
+			}
+		}else{
+			record[pattern[i]]=words[i]
+			if _,ok:=visited[words[i]];ok{
+				return false
+			}
+			visited[words[i]]=true
 		}
 	}
+	return true
 }
 
 func main() {
