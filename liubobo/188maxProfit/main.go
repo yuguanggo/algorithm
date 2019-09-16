@@ -26,7 +26,42 @@ package main
  */
 
 func maxProfit(k int, prices []int) int {
+	n:=len(prices)
+	if n==0{
+		return 0
+	}
+	dp:=make([][][2]int,n)
+	if k>=n/2{
+		res:=0
+		for i:=1;i<n;i++{
+			if prices[i]>prices[i-1]{
+				res+=prices[i]-prices[i-1]
+			}
+		}
+		return res
+	}
+	for i:=0;i<n;i++{
+		dp[i]=make([][2]int,k+1)
+	}
+	for i:=0;i<n;i++{
+		for j:=k;j>=1;j--{
+			if i-1==-1{
+				dp[i][j][0]=0
+				dp[i][j][1]=-prices[i]
+				continue
+			}
+			dp[i][j][0]=max(dp[i-1][j][0],dp[i-1][j][1]+prices[i])
+			dp[i][j][1]=max(dp[i-1][j][1],dp[i-1][j-1][0]-prices[i])
+		}
+	}
+	return dp[n-1][k][0]
+}
 
+func max(i,j int) int  {
+	if i>j{
+		return i
+	}
+	return j
 }
 
 

@@ -37,19 +37,18 @@ import (
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-func maxProfit(prices []int) int {
+func maxProfit2(prices []int) int {
 	n:=len(prices)
 	if n==0{
 		return 0
 	}
 	k:=2
 	dp:=make([][3][2]int,n)
-
 	for i:=0;i<n;i++{
 		if i-1==-1{
-			//dp[i][2][1]=max()
-			dp[i][1][1]=math.MinInt32
-			dp[i][1][0]=math.MinInt32
+			dp[0][2][1]=math.MinInt32
+			dp[0][1][1]=math.MinInt32
+			dp[0][1][0]=0
 			continue
 		}
 		dp[i][2][0]=max(dp[i-1][2][0],dp[i-1][2][1]+prices[i])
@@ -57,11 +56,25 @@ func maxProfit(prices []int) int {
 		dp[i][1][0]=max(dp[i-1][1][0],dp[i-1][1][1]+prices[i])
 		dp[i][1][1]=max(dp[i-1][1][1],-prices[i])
 	}
-	for i:=0;i<n;i++{
-		fmt.Println(dp[i])
-	}
-
 	return dp[n-1][k][0]
+}
+
+func maxProfit(prices []int) int {
+	n:=len(prices)
+	if n==0{
+		return 0
+	}
+	dp_i10:=0
+	dp_i11:=math.MinInt32
+	dp_i20:=0
+	dp_i21:=math.MinInt32
+	for i:=0;i<n;i++{
+		dp_i20=max(dp_i20,dp_i21+prices[i])
+		dp_i21=max(dp_i21,dp_i10-prices[i])
+		dp_i10=max(dp_i10,dp_i11+prices[i])
+		dp_i11=max(dp_i11,-prices[i])
+	}
+	return dp_i20
 }
 
 func max(i,j int) int  {
