@@ -2,6 +2,7 @@ package main
 
 import (
 	"sort"
+	"math"
 )
 
 func threeSumClosest(nums []int, target int) int {
@@ -16,18 +17,20 @@ func threeSumClosest(nums []int, target int) int {
 		r:=n-1
 		for l<r{
 			sum:=nums[i]+nums[l]+nums[r]
-			if am
-			for nums[l]+nums[r]-target1<gap{
-				gap=nums[l]+nums[r]-target1
-				sum=nums[i]+nums[l]+nums[r]
-				l++
+			if math.Abs(float64(target-sum))<math.Abs(float64(target-ans)){
+				ans=sum
 			}
-			if nums[l]+nums[r]-target1>=gap{
+			if sum>target{
 				r--
+			}else if sum<target{
+				l++
+			}else{
+				return ans
 			}
+
 		}
 	}
-	return sum
+	return ans
 }
 
 
