@@ -1,6 +1,5 @@
 package main
 
-
 type ListNode struct {
 	Val int
 	Next *ListNode
@@ -10,34 +9,47 @@ type ListNode struct {
 func reverseKGroup(head *ListNode, k int) *ListNode {
     dummy:=&ListNode{}
     dummy.Next=head
-    fast:=head
-    slow:=head
-    pre:=dummy
-    i:=1
-    for i<=k{
-    	if fast.Next!=nil{
-    		i++
-    		fast=fast.Next
-		}else{
-			break
+   	pre:=dummy
+   	end:=dummy
+   	for end.Next!=nil{
+   		for i:=0;i<k&&end!=nil;i++{
+   			end=end.Next
 		}
+   		if end==nil{
+   			break;
+		}
+   		start:=pre.Next
+   		next:=end.Next
+   		end.Next=nil //先断开
+   		pre.Next=reserverNode2(start)
+   		pre=start
+   		pre.Next=next
+   		end=pre
+
 	}
-	if i<k{
+	return dummy.Next
+}
+
+func reserverNode(head *ListNode) *ListNode  {
+	var pre *ListNode
+	cur:=head
+	for cur!=nil{
+		next:=cur.Next
+		cur.Next=pre
+		pre=cur
+		cur=next
+	}
+	return pre
+}
+
+func reserverNode2(head *ListNode) *ListNode  {
+	if head==nil||head.Next==nil{
 		return head
 	}
-	//开始反转
-	for slow!=fast{
-		next:=slow.Next
-		slow.Next=pre
-		pre=slow
-		slow=next
-	}
-	next:=fast.Next
-	fast.Next=pre
-	pre=fast
-	fast=next
-	dummy.Next=pre
-	return
+	p:=reserverNode2(head.Next)
+	head.Next.Next=head
+	head.Next=nil
+	return p
 }
 
 

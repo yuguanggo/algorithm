@@ -55,7 +55,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 }
 
 func reverseNode(head *ListNode) *ListNode  {
-	var pre *ListNode=nil
+	var pre *ListNode
 	cur:=head
 	for cur!=nil{
 		next:=cur.Next
