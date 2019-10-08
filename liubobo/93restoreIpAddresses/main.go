@@ -38,7 +38,7 @@ func backTracking(s string,pos int,path []string,res *[]string)  {
 			break
 		}
 		subs:=s[pos:pos+i]
-		n,_:=strconv.Atoi(subs);
+		n,_:=strconv.Atoi(subs)
 		if strings.HasPrefix(subs,"0")&&len(subs)>1||n>255{
 			continue
 		}
