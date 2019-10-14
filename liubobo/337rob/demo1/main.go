@@ -7,16 +7,24 @@ type TreeNode struct {
 }
 
 func rob(root *TreeNode) int {
-	if root==nil{
-		return 0
-	}
-	q:=make([]*TreeNode,0)
-	q=append(q,root)
-	oddsum:=0 //偶数层的和
-	evensum:=0 //
-	for len(q)>0{
+	res:=dfs(root)
+	return max(res[0],res[1])
+}
 
+func dfs(root *TreeNode) [2]int  {
+	if root==nil{
+		return [2]int{0,0}
 	}
+	l:=dfs(root.Left)
+	r:=dfs(root.Right)
+	return [2]int{max(l[0],l[1])+max(r[0],r[1]),root.Val+l[0]+r[0]}
+}
+
+func max(i,j int) int  {
+	if i>j{
+		return i
+	}
+	return j
 }
 
 func main() {
