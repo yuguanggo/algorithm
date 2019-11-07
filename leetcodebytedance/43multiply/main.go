@@ -44,8 +44,8 @@ func multiply(num1 string, num2 string) string {
 }
 
 func main() {
-  s1:="4"
-  s2:="4"
+  s1:="14"
+  s2:="34"
 
   fmt.Println(multiply(s1,s2))
 

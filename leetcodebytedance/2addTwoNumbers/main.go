@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /**
 两数相加
@@ -58,13 +60,11 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return dummy.Next
 }
 func main() {
-	l3 := &ListNode{Val: 4, Next: nil}
-	l2 := &ListNode{Val: 3, Next: l3}
-	l1 := &ListNode{Val: 2, Next: l2}
-
-	l4 := &ListNode{Val: 4, Next: nil}
-	l5 := &ListNode{Val: 6, Next: l4}
-	l6 := &ListNode{Val: 5, Next: l5}
-	sum := addTwoNumbers(l1, l6)
-	fmt.Println(sum)
+	key:="add"
+	var srcatch []byte
+	//拷贝数据到数组中
+	copy(srcatch, key)
+	//使用IEEE 多项式返回数据的CRC-32校验和
+	fmt.Println([]byte(key))
+	fmt.Println(srcatch[:len(key)])
 }
